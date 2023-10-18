@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import admin1 from "../../assets/admin1.svg";
 
 const Navbar = () => {
-  const [activeButton, setActiveButton] = useState("myAds"); // Set the initial active button
+  const [activeButton, setActiveButton] = useState("myAds");
 
-  const handleButtonClick = (buttonId) => {
-    setActiveButton(buttonId);
+  const handleButtonClick = (button) => {
+    setActiveButton(button);
   };
+
+
   return (
     <div className="">
       <div className="container">
@@ -21,14 +23,14 @@ const Navbar = () => {
             </div>
           </div>
           <div className="flex items-center border-[1px] border-borderColor rounded-full">
-            <button
-              className={`bg-${
-                activeButton === "myAds" ? "white" : "transparent"
-              } flex rounded-[100px] py-2 px-5 gap-2 text-${
-                activeButton === "myAds" ? "black" : "white"
-              } font-medium `}
-              onClick={() => handleButtonClick("myAds")}
-            >
+          <button
+        className={`${
+          activeButton === "myAds" ? "bg-white" : "bg-transparent"
+        } flex rounded-[100px] py-2 px-5 gap-2 ${
+          activeButton === "myAds" ? "text-black" : "text-white"
+        } font-medium`}
+        onClick={() => handleButtonClick("myAds")}
+      >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="22"
@@ -54,13 +56,13 @@ const Navbar = () => {
               My Ads
             </button>
             <button
-              className={`bg-${
-                activeButton === "brands" ? "white" : "transparent"
-              } flex rounded-[100px] py-2 px-5 text-center gap-2 text-${
-                activeButton === "brands" ? "black" : "white"
-              } font-medium `}
-              onClick={() => handleButtonClick("brands")}
-            >
+        className={`${
+          activeButton === "brands" ? "bg-white" : "bg-transparent"
+        } flex rounded-[100px] py-2 px-5 gap-2 ${
+          activeButton === "brands" ? "text-black" : "text-white"
+        } font-medium`}
+        onClick={() => handleButtonClick("brands")}
+      >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="23"
